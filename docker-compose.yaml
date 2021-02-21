@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  web:
+    image: php:8.0.2-apache-buster
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html/

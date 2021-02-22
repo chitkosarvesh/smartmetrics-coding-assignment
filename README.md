@@ -2,7 +2,7 @@
 
 Author : Sarvesh Chitko <chitkosarvesh@gmail.com> 
 
-Written for: SmartMetrics
+Written for: SuperMetrics
 
 ## Example Output
 ```json

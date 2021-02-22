@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartMetrics;
+namespace SuperMetrics;
 /**
  * Class that is responsible for getting the token, also further can have token storage/persistance related options
  */

@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartMetrics;
+namespace SuperMetrics;
 
 require("config/Config.php");
 require("src/Token.php");

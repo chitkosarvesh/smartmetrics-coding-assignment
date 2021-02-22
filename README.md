@@ -1,4 +1,4 @@
-# SMARTMETRICS CODING ASSIGNMENT
+# SuperMetrics CODING ASSIGNMENT
 
 Author : Sarvesh Chitko <chitkosarvesh@gmail.com> 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartMetrics;
+namespace SuperMetrics;
 
 include "src/Post.php";
 /**

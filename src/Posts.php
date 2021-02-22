@@ -1,21 +1,48 @@
 <?php
 
 namespace SmartMetrics;
+
 include "src/Post.php";
+/**
+ * Class that calls the getPosts API and processes the pages and delivers an output
+ */
 class Posts
 {
+    /**
+     * @var Config holds the configuration object
+     */
     private Config $c;
-    private $posts;
+    /**
+     * @var string holds the token to use to get the posts
+     */
     private string $token;
+    /**
+     * Class Constructor. Sets tthe token and config supplied as inputs and initializes weekly lookup, stats and user_posts arrays
+     * @param string Contains the token
+     * @param Config Contains the Config
+     */
     function __construct($token, $config)
     {
         $this->c = $config;
         $this->token = $token;
-        $this->posts = [];
+        /**
+         * @var array will hold monthly stats for the posts
+         */
         $this->stats = [];
+        /**
+         * @var array will hold the weekly data for the posts
+         */
         $this->weekly_lookup = [];
+        /**
+         * @var array will hold user wise data for the posts
+         */
         $this->user_posts = [];
     }
+    /**
+     * gets the posts recursively for the number of pages in the config, parses the posts 
+     * and breaks them down into usable functions and delivers output in the requested format
+     * @return array the completed output to be strigified and displayed
+     */
     function get_posts()
     {
         for ($i = 1; $i < $this->c->get_number_of_pages() + 1; $i++) {
@@ -79,6 +106,9 @@ class Posts
         $this->average_user_posts();
         return $this->format_output();
     }
+    /**
+     * groups multilple class variables into a deliverable output
+     */
     private function format_output()
     {
         $output = [
@@ -88,6 +118,9 @@ class Posts
         ];
         return $output;
     }
+    /**
+     * function to find the average user posts per month, is run after the get_posts is completed
+     */
     private function average_user_posts()
     {
         foreach ($this->user_posts as $key => $user) {

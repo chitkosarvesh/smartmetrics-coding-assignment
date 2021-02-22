@@ -1,14 +1,27 @@
 <?php
 
 namespace SmartMetrics;
-
+/**
+ * Class that is responsible for getting the token, also further can have token storage/persistance related options
+ */
 class Token
 {
+    /**
+     * @var Config holds the config object
+     */
     private Config $c;
+    /**
+     * class constructor, takes the input as config and sets it in the object
+     * @param Config the config object
+     */
     function __construct($config)
     {
         $this->c = $config;
     }
+    /**
+     * returns the token to be used while sending API requests
+     * @return string the token
+     */
     function get_token()
     {
 
@@ -31,8 +44,7 @@ class Token
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json'
             ),
-        ));
-
+        ));        
         $response = curl_exec($curl);
         curl_close($curl);
         $json_response = json_decode($response);

@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartMetrics;
+namespace SuperMetrics;
 
 /**
  * Class describing a single post, with all methods to access/modify the Post

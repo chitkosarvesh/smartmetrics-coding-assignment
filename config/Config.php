@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartMetrics;
+namespace SuperMetrics;
 
 /**
  * Class providing the configuration variables required in the project, and provides getter-setter methods
